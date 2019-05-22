@@ -27,9 +27,11 @@ export class FeedPage {
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad FeedPage');
-    this.movieProvider.getLatestMovies().subscribe(
+    this.movieProvider.getPopularMovies().subscribe(
       data =>{
-        console.log(data);
+        const response = (data as any);
+        const objeto_retorno = JSON.parse(response._body);
+        console.log(objeto_retorno);
     }, error =>{
       console.log(error);
     })
