@@ -1,9 +1,3 @@
-<!--
-  Generated template for the FeedPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-title>Feed</ion-title>
@@ -12,20 +6,20 @@
 
 <ion-content padding>
 
-  <ion-card>
+  <ion-card *ngFor="let filme of lista_filmes">
 
     <ion-item>
       <ion-avatar item-start>
         <img src="assets/imgs/marty-avatar.png">
       </ion-avatar>
-      <h2 class="feed_title">Washington Charles</h2>
-      <p>November 5, 1955</p>
+      <h2 class="feed_title">{{filme.original_title}}</h2>
+      <p>{{filme.release_date}}</p>
     </ion-item>
 
-    <img src="assets/imgs/advance-card-bttf.png">
+    <img [src]="'https://image.tmdb.org/t/p/w300' + filme.backdrop_path">
 
     <ion-card-content>
-      <p>Meu APP incrivel!</p>
+      <p>{{filme.overview}}</p>
     </ion-card-content>
 
     <ion-row>
