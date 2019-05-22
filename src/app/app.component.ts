@@ -25,11 +25,12 @@ export class MyApp {
     statusBar: StatusBar, 
     splashScreen: SplashScreen,
     configProvider: ConfigProvider) {
+
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       
-      let config = configProvider.getConfigData;
+      let config = configProvider.getConfigData();
       console.log(config);
 
       statusBar.styleDefault();
