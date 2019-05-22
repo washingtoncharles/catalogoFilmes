@@ -11,13 +11,15 @@ import { Http } from '@angular/http';
 @Injectable()
 export class MovieProvider {
 
+  private baseApiPath = "https://api.themoviedb.org/3";
+
   constructor(
     public http: HttpClient) {
     console.log('Hello MovieProvider Provider');
   }
 
   getLatestMovies(){
-    return this.http.get("http://");
+    return this.http.get(this.baseApiPath + "/movie/latest");
   }
 
 }
