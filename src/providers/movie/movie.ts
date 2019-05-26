@@ -12,7 +12,7 @@ import { Http } from '@angular/http';
 export class MovieProvider {
 
   private baseApiPath = "https://api.themoviedb.org/3";
-  private baseApiKey = "?api_key=XXX";
+  private baseApiKey = "XXX";
 
   constructor(
     public http: Http) {
@@ -20,14 +20,14 @@ export class MovieProvider {
   }
 
   getLatestMovies(){
-    return this.http.get(this.baseApiPath + "/movie/latest" + this.baseApiKey);
+    return this.http.get(this.baseApiPath + "/movie/latest?api_key=" + this.baseApiKey);
   }
 
-  getPopularMovies(){
-    return this.http.get(this.baseApiPath + "/movie/popular" + this.baseApiKey);
+  getPopularMovies(page = 1){
+    return this.http.get(this.baseApiPath + `/movie/popular?page=${page}&api_key=` + this.baseApiKey);
   }
 
   getMovieDetalhes(filmeid){
-    return this.http.get(this.baseApiPath + `/movie/${filmeid}` + this.baseApiKey);
+    return this.http.get(this.baseApiPath + `/movie/${filmeid}?api_key=` + this.baseApiKey);
   }
 }
