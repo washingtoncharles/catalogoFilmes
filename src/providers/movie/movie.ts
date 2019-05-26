@@ -26,4 +26,8 @@ export class MovieProvider {
   getPopularMovies(){
     return this.http.get(this.baseApiPath + "/movie/popular" + this.baseApiKey);
   }
+
+  getMovieDetalhes(filmeid){
+    return this.http.get(this.baseApiPath + `/movie/${filmeid}` + this.baseApiKey);
+  }
 }

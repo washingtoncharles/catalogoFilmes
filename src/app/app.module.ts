@@ -13,6 +13,7 @@ import { FeedPageModule } from '../pages/feed/feed.module';
 import { IntroPageModule } from '../pages/intro/intro.module';
 import { MovieProvider } from '../providers/movie/movie';
 import { ConfigProvider } from '../providers/config/config';
+import { FeedDetalhesPageModule } from '../pages/feed-detalhes/feed-detalhes.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ConfigProvider } from '../providers/config/config';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     FeedPageModule,
+    FeedDetalhesPageModule,
     IntroPageModule,
     HttpModule
   ],
